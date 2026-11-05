@@ -1,0 +1,20 @@
+{
+  "name": "paper-joy",
+  "version": "0.1.0",
+  "private": true,
+  "description": "纸趣儿童打印素材 - 小程序、运营后台与 API",
+  "engines": { "node": ">=22.12 <23" },
+  "workspaces": ["apps/*"],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "dev:api": "npm run dev -w @paperjoy/api",
+    "dev:admin": "npm run dev -w @paperjoy/admin",
+    "build:miniprogram": "npm run build -w @paperjoy/miniprogram",
+    "prisma:generate": "npm run prisma:generate -w @paperjoy/api",
+    "prisma:deploy": "npm run prisma:deploy -w @paperjoy/api",
+    "seed": "npm run seed -w @paperjoy/api"
+  },
+  "devDependencies": { "typescript": "5.9.3", "@types/node": "22.19.0", "tsx": "4.20.6" }
+}

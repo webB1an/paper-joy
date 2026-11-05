@@ -1,0 +1,1 @@
+import {getConfig} from '../../lib/api';Page({data:{privacy:true,version:'',support:''},onLoad(o){this.setData({privacy:o.type!=='terms'});getConfig().then(c=>this.setData({version:c.privacyVersion,support:c.supportContact})).catch(()=>{})}});

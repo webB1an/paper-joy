@@ -1,0 +1,1 @@
+{"name":"@paperjoy/miniprogram","version":"1.0.0","private":true,"scripts":{"typecheck":"tsc --noEmit","build":"node scripts/build.mjs","test":"node --test tests/*.test.mjs"},"devDependencies":{"miniprogram-api-typings":"4.0.8","typescript":"5.7.3"}}

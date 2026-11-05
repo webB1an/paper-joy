@@ -1,0 +1,38 @@
+{
+  "name": "@paperjoy/api",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/prisma.cjs generate && tsc -p tsconfig.json",
+    "typecheck": "node scripts/prisma.cjs generate && tsc --noEmit",
+    "start": "node dist/main.js",
+    "dev": "tsx watch src/main.ts",
+    "test": "tsx --tsconfig tsconfig.json --test test/*.test.ts",
+    "prisma:generate": "node scripts/prisma.cjs generate",
+    "db:deploy": "node scripts/prisma.cjs migrate deploy",
+    "db:seed": "node prisma/seed.cjs",
+    "prisma:deploy": "node scripts/prisma.cjs migrate deploy",
+    "seed": "node prisma/seed.cjs"
+  },
+  "dependencies": {
+    "@nestjs/common": "^11.0.0",
+    "@nestjs/core": "^11.0.0",
+    "@nestjs/platform-express": "^11.0.0",
+    "@prisma/client": "^6.19.0",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "multer": "^2.0.2",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2",
+    "sharp": "^0.34.4",
+    "zod": "^3.24.2",
+    "prisma": "^6.19.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/multer": "^2.0.0",
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.2"
+  }
+}

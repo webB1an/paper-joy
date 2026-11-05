@@ -1,0 +1,1 @@
+<view class="dock"><view class="bar glass"><view wx:for="{{items}}" wx:key="path" class="tab {{selected === index ? 'active' : ''}}" data-index="{{index}}" bindtap="change" role="button" aria-label="{{item.name}}"><text class="icon">{{item.icon}}</text><text>{{item.name}}</text></view></view></view>

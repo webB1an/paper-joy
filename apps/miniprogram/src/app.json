@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/discover/index",
+    "pages/categories/index",
+    "pages/favorites/index",
+    "pages/profile/index",
+    "pages/search/index",
+    "pages/topic/index",
+    "pages/detail/index",
+    "pages/claim/index",
+    "pages/feedback/index",
+    "pages/legal/index"
+  ],
+  "window": {
+    "navigationStyle": "custom",
+    "backgroundColor": "#F8F6F2",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#666975",
+    "selectedColor": "#356ADE",
+    "list": [
+      {
+        "pagePath": "pages/discover/index",
+        "text": "发现"
+      },
+      {
+        "pagePath": "pages/categories/index",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/favorites/index",
+        "text": "收藏"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "style": "v2"
+}

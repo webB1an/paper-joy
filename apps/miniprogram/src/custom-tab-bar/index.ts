@@ -1,0 +1,1 @@
+Component({data:{selected:0,items:[{path:'discover',name:'发现',icon:'◉'},{path:'categories',name:'分类',icon:'▦'},{path:'favorites',name:'收藏',icon:'♡'},{path:'profile',name:'我的',icon:'◌'}]},methods:{change(e:WechatMiniprogram.TouchEvent){const i=Number(e.currentTarget.dataset.index);wx.switchTab({url:'/pages/'+this.data.items[i].path+'/index'})}}});

@@ -1,0 +1,13 @@
+import {execFileSync} from 'node:child_process';
+import {mkdir,access} from 'node:fs/promises';
+import {resolve,join} from 'node:path';
+const root=resolve(import.meta.dirname,'..');
+const commit=execFileSync('git',['rev-parse','--short=10','HEAD'],{cwd:root,encoding:'utf8'}).trim();
+const stamp=new Date().toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z$/,'Z');
+const name=stamp+'-'+commit;
+const files=['package.json','package-lock.json','.nvmrc','deploy','apps/api/package.json','apps/api/dist','apps/api/prisma','apps/api/scripts','apps/admin/package.json','apps/admin/dist','apps/miniprogram/package.json'];
+await Promise.all(files.map(file=>access(join(root,file))));
+await mkdir(join(root,'release'),{recursive:true});
+const archive=join(root,'release',name+'.tar.gz');
+execFileSync('tar',['-czf',archive,'-C',root,...files],{stdio:'inherit'});
+console.log(JSON.stringify({release:name,archive}));

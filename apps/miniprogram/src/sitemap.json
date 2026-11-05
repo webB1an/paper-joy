@@ -1,0 +1,25 @@
+{
+  "desc": "公开素材可索引，个人状态和领取页面不索引",
+  "rules": [
+    {
+      "action": "disallow",
+      "page": "pages/favorites/index"
+    },
+    {
+      "action": "disallow",
+      "page": "pages/profile/index"
+    },
+    {
+      "action": "disallow",
+      "page": "pages/claim/index"
+    },
+    {
+      "action": "disallow",
+      "page": "pages/feedback/index"
+    },
+    {
+      "action": "allow",
+      "page": "*"
+    }
+  ]
+}

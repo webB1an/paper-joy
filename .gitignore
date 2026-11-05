@@ -29,3 +29,10 @@ materials/output/
 # OS files
 Thumbs.db
 .DS_Store
+
+# Local content generation and release bundles
+output/
+release/
+storage/
+.local/
+*.tsbuildinfo

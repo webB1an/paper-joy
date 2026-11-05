@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "pj-nav": "/components/nav/index",
+    "resource-card": "/components/resource-card/index"
+  },
+  "enablePullDownRefresh": true
+}

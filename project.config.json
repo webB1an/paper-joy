@@ -1,0 +1,14 @@
+{
+  "appid": "wx28e18cf4675ffa9a",
+  "projectname": "paper-joy",
+  "miniprogramRoot": "apps/miniprogram/dist/",
+  "compileType": "miniprogram",
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "minified": true,
+    "checkSiteMap": true
+  }
+}

@@ -1,0 +1,120 @@
+generator client {
+ provider = "prisma-client-js"
+ binaryTargets = ["native", "rhel-openssl-3.0.x"]
+}
+datasource db {
+ provider = "mysql"
+ url = env("DATABASE_URL")
+}
+model Resource {
+ id String @id @default(uuid()) @db.VarChar(36)
+ slug String @unique @db.VarChar(180)
+ title String @db.VarChar(200)
+ categoryId String @db.VarChar(36)
+ status String @default("DRAFT") @db.VarChar(20)
+ data Json
+ sourceHash String? @unique @db.VarChar(64)
+ sourcePath String? @db.VarChar(500)
+ sourceBytes Int @default(0)
+ version Int @default(1)
+ createdAt DateTime @default(now())
+ updatedAt DateTime @updatedAt
+ links DriveLink[]
+ @@index([status,createdAt])
+}
+model Taxonomy {
+ id String @id @default(uuid()) @db.VarChar(36)
+ kind String @db.VarChar(16)
+ slug String @db.VarChar(180)
+ name String @db.VarChar(100)
+ description String? @db.Text
+ coverUrl String? @db.VarChar(500)
+ @@unique([kind,slug])
+}
+model DriveLink {
+ id String @id @default(uuid()) @db.VarChar(36)
+ resourceId String @db.VarChar(36)
+ resource Resource @relation(fields:[resourceId],references:[id],onDelete:Cascade)
+ provider String @db.VarChar(10)
+ url String @db.VarChar(1000)
+ extractionCode String @default("") @db.VarChar(32)
+ enabled Boolean @default(true)
+ code String @unique @default(uuid()) @db.VarChar(36)
+ @@unique([resourceId,provider])
+}
+model User {
+ id String @id @default(uuid()) @db.VarChar(36)
+ openid String @unique @db.VarChar(128)
+ createdAt DateTime @default(now())
+}
+model Favorite {
+ id String @id @default(uuid()) @db.VarChar(36)
+ userId String @db.VarChar(36)
+ resourceId String @db.VarChar(36)
+ @@unique([userId,resourceId])
+}
+model Claim {
+ id String @id @default(uuid()) @db.VarChar(36)
+ identity String @db.VarChar(160)
+ resourceId String @db.VarChar(36)
+ requestId String @db.VarChar(100)
+ response Json
+ createdAt DateTime @default(now())
+ @@unique([identity,resourceId,requestId])
+}
+model Reward {
+ id String @id @default(uuid()) @db.VarChar(36)
+ identity String @db.VarChar(160)
+ resourceId String @db.VarChar(36)
+ requestId String @db.VarChar(100)
+ completed Boolean @default(false)
+ used Boolean @default(false)
+ expiresAt DateTime
+ @@unique([identity,resourceId,requestId])
+}
+model Event {
+ id String @id @default(uuid()) @db.VarChar(36)
+ type String @db.VarChar(30)
+ resourceId String? @db.VarChar(36)
+ identity String @db.VarChar(160)
+ requestId String? @unique @db.VarChar(64)
+ createdAt DateTime @default(now())
+ @@index([identity,type,createdAt])
+}
+model Feedback {
+ id String @id @default(uuid()) @db.VarChar(36)
+ resourceId String? @db.VarChar(36)
+ type String @db.VarChar(20)
+ message String @db.Text
+ contact String? @db.VarChar(200)
+ status String @default("OPEN") @db.VarChar(20)
+ createdAt DateTime @default(now())
+}
+model ImportBatch {
+ id String @id @default(uuid()) @db.VarChar(36)
+ resourceId String @unique @db.VarChar(36)
+ status String @default("REVIEW") @db.VarChar(20)
+ message String? @db.VarChar(300)
+ createdAt DateTime @default(now())
+}
+model StorageAccount {
+ id String @id @default(uuid()) @db.VarChar(36)
+ name String @db.VarChar(100)
+ provider String @db.VarChar(10)
+ status String @default("UNAUTHORIZED") @db.VarChar(20)
+ lastError String? @db.VarChar(300)
+}
+model Task {
+ activeResourceId String? @unique @db.VarChar(36)
+ id String @id @default(uuid()) @db.VarChar(36)
+ resourceId String @db.VarChar(36)
+ baiduAccountId String @db.VarChar(36)
+ quarkAccountId String @db.VarChar(36)
+ status String @default("PENDING") @db.VarChar(20)
+ checkpoints Json
+ attempts Int @default(0)
+ error String? @db.VarChar(300)
+ createdAt DateTime @default(now())
+ updatedAt DateTime @updatedAt
+ @@index([status,createdAt])
+}
