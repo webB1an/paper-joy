@@ -1,5 +1,11 @@
 # PaperJoy 图标初稿
 
+## 开放式蜡笔新稿
+
+- [144 × 144 PNG](paperjoy-icon-v5-144.png)：满幅蓝底、立体蜡笔和开放笑弧，去除封闭容器与折角。
+- [高清原图](paperjoy-icon-v5-original.png)
+- [设计与生成提示词](paperjoy-icon-v5-notes.md)
+
 ## 新版小程序图标
 
 - [新版 144 × 144 PNG](paperjoy-icon-v2-144.png)：重新设计的简洁折角纸张与笑脸，不透明背景。
