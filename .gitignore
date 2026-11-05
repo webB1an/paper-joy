@@ -1,0 +1,31 @@
+# Runtime credentials and private environment files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials/
+secrets/
+*.log
+
+# Build outputs and local tools
+node_modules/
+dist/
+coverage/
+.cache/
+.venv/
+tmp/
+project.private.config.json
+
+# Runtime data and bulk printable packages
+data/
+backups/
+uploads/
+materials/private/
+materials/output/
+
+# OS files
+Thumbs.db
+.DS_Store

@@ -1,0 +1,4 @@
+* text=auto eol=lf
+*.png binary
+# Preserve exact downloaded bytes so provenance hashes survive checkout.
+assets/source-materials/*.svg -text

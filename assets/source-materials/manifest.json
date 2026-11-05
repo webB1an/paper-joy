@@ -1,0 +1,42 @@
+{
+  "collection": "Openclipart source material pool",
+  "created_at": "2026-11-05",
+  "status": "pending_print_layout",
+  "note": "Raw source SVGs only. Not laid out or reviewed as finished printable activities.",
+  "assets": [
+    {
+      "title": "Simple Rabbit Optimized Outline",
+      "source_page": "https://openclipart.org/detail/350812/simple-rabbit-optimized-outline",
+      "download_url": "https://openclipart.org/download/350812",
+      "author": "GDJ",
+      "license": "CC0 1.0 Public Domain (Openclipart site policy; see README.md)",
+      "checked_at": "2026-11-05",
+      "sha256": "241ae8e87945070466860c57e700910f40d44a5fb83eba4f1839e7258189e304",
+      "local_path": "assets/source-materials/simple-rabbit-optimized-outline.svg",
+      "status": "pending_print_layout",
+      "original_work": "Simple Rabbit by j4p4n (https://openclipart.org/detail/271806/simple-rabbit)"
+    },
+    {
+      "title": "Simple Flower",
+      "source_page": "https://openclipart.org/detail/16629/simple-flower",
+      "download_url": "https://openclipart.org/download/16629",
+      "author": "HakanL",
+      "license": "CC0 1.0 Public Domain (Openclipart site policy; see README.md)",
+      "checked_at": "2026-11-05",
+      "sha256": "0eeb6d2da453f10258a14e80024943c2b860f7f5a473b7655aeeb8e8f9140e7c",
+      "local_path": "assets/source-materials/simple-flower.svg",
+      "status": "pending_print_layout"
+    },
+    {
+      "title": "Poppy",
+      "source_page": "https://openclipart.org/detail/22517/poppy",
+      "download_url": "https://openclipart.org/download/22517",
+      "author": "warszawianka",
+      "license": "CC0 1.0 Public Domain (Openclipart site policy; see README.md)",
+      "checked_at": "2026-11-05",
+      "sha256": "ba1d7460ee9d976cde68504c8ccd6a2f410d3d92351c4fcee7ebcf7de5cf0272",
+      "local_path": "assets/source-materials/poppy.svg",
+      "status": "pending_print_layout"
+    }
+  ]
+}
