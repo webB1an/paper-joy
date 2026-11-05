@@ -1,5 +1,13 @@
 # PaperJoy 图标初稿
 
+## 新版小程序图标
+
+- [新版 144 × 144 PNG](paperjoy-icon-v2-144.png)：重新设计的简洁折角纸张与笑脸，不透明背景。
+- [新版原始大图](paperjoy-icon-v2-original.png)
+- [新版设计与生成提示词](paperjoy-icon-v2-notes.md)
+
+## 第一版概念存档
+
 - 状态：概念初稿，供视觉方向评审，尚非最终品牌标识。
 - 工具：Codex 内置 image_gen。
 - 原图：`paperjoy-icon-draft.png`（1254 × 1254，PNG）。
